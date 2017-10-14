@@ -27,8 +27,8 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2017-10-14T22:23:09.715154+09:00">
-                Published: 土 14 10月 2017
+        <abbr class="published" title="2017-10-15T00:43:24.096434+09:00">
+                Published: 日 15 10月 2017
         </abbr>
 
         <address class="vcard author">
@@ -36,73 +36,167 @@
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info -->      <div class="section" id="test-post">
-<h2>TEST POST</h2>
+</footer><!-- /.post-info -->      <div class="section" id="about-the-basic-uses-and-several-small-things-of-rest">
+<h2>About the basic uses and several small things of reST</h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name">date:</th><td class="field-body">2017-10-14 10:55:50</td>
 </tr>
-<tr class="field"><th class="field-name">category:</th><td class="field-body">Test</td>
+<tr class="field"><th class="field-name">category:</th><td class="field-body">Memo</td>
+</tr>
+<tr class="field"><th class="field-name">tag:</th><td class="field-body">reST</td>
 </tr>
 </tbody>
 </table>
-<p><em>emphasis</em> <em>emphasis</em></p>
-<p><strong>strong emphasis</strong> <strong>strong</strong></p>
-<p><tt class="docutils literal">git log <span class="pre">--c</span></tt> <tt class="docutils literal">git log <span class="pre">--cc</span></tt></p>
+<div class="section" id="inline-markers">
+<h3>Inline markers</h3>
+<p>The right-hand forms are called &quot;interpreted text roles&quot;.
+The semantics for this is like this; :rolename:<cite>text</cite></p>
+<p>reST:</p>
+<pre class="literal-block">
+*emphasis* = :emphasis:`emphasis`
+
+**strong emphasis**  = :strong:`strong emphasis`
+
+``literal``  = :literal:`literal`
+
+:superscript:`superscript` :subscript:`subscript`
+</pre>
+<p>This will look like this:</p>
+<hr class="docutils" />
+<p><em>emphasis</em> = <em>emphasis</em></p>
+<p><strong>strong emphasis</strong>  = <strong>strong emphasis</strong></p>
+<p><tt class="docutils literal">literal</tt>  = <tt class="docutils literal">literal</tt></p>
 <p><sup>superscript</sup> <sub>subscript</sub></p>
-<ul class="simple">
-<li>line 1</li>
-<li>line 2</li>
-</ul>
-<ol class="arabic">
-<li><p class="first">line 1</p>
-</li>
-<li><p class="first">line 2</p>
-</li>
-<li><p class="first">line 1</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="lists">
+<h3>Lists</h3>
+<div class="section" id="normal-lists-including-the-numbered-and-the-non-numbered">
+<h4>Normal lists(including the numbered and the non-numbered)</h4>
+<p>reST code:</p>
+<pre class="literal-block">
+* ELEMENT1
+* ELEMENT1
+
+#. ELEMENT1
+4. ELEMENT1
+
+     1. element1
+     #. element2
+
+#. ELEMENT1
+#. ELEMENT1
+</pre>
+<p>This will look like this:</p>
+<hr class="docutils" />
+<p>#. ELEMENT1
+2. ELEMENT2
+#. ELEMENT3</p>
 <blockquote>
-<ul class="simple">
-<li>subline 1</li>
-</ul>
 <ol class="arabic simple">
-<li>subline 1</li>
-<li>subline 2</li>
+<li>element1</li>
+<li>element2</li>
 </ol>
 </blockquote>
-</li>
+<ol class="arabic simple">
+<li>ELEMENT4</li>
+<li>ELEMENT5</li>
 </ol>
-<ol class="arabic simple" start="2">
-<li>line 2</li>
-<li>line 3</li>
-</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="definition-lists">
+<h4>Definition lists</h4>
+<p>reST code:</p>
+<pre class="literal-block">
+term1
+    description of term1
+term2
+    description of term2
+
+term3
+    description of term3
+</pre>
+<p>This will look like this:</p>
+<hr class="docutils" />
 <dl class="docutils">
 <dt>term1</dt>
 <dd>description of term1</dd>
 <dt>term2</dt>
 <dd>description of term2</dd>
-<dt>term1</dt>
-<dd>description of term1</dd>
-<dt>term2</dt>
-<dd>description of term2</dd>
+<dt>term3</dt>
+<dd>description of term3</dd>
 </dl>
+<hr class="docutils" />
+<p>The blank line between term2 and term3 is removed.
+It seems the blank lines between blocks which have the same indents are removed.</p>
+</div>
+</div>
+<div class="section" id="literal-blocks">
+<h3>Literal blocks</h3>
+<p>The blocks after literal block markers will be unindented, and the font of each block will be a monospaced font, in all cases.
+There must be more than one line between a line containing the marker between the literal block.</p>
+<p>If the markers occur in a line containing  a non-space character, single colon following that non-space character will be displayed:</p>
+<pre class="literal-block">
+The next paragraph is a code sample::
+
+    def func():
+        print(&quot;Hello World&quot;)
+</pre>
+<p>So this will look like this:</p>
+<hr class="docutils" />
 <p>The next paragraph is a code sample:</p>
 <pre class="literal-block">
 def func():
     print(&quot;Hello World&quot;)
 </pre>
-<p>The next paragraph is a code sample :</p>
-<dl class="docutils">
-<dt>def func():</dt>
-<dd>print(&quot;Hello World&quot;)</dd>
-</dl>
-<p>The next paragraph is a code sample</p>
+<hr class="docutils" />
+<p>If the markers occur following a space, the colons are not displayed:</p>
+<pre class="literal-block">
+The next paragraph is a code sample.
+::
+
+     def func():
+         print(&quot;Hello World&quot;)
+</pre>
+<p>So this will look like this:</p>
+<hr class="docutils" />
+<p>The next paragraph is a code sample.</p>
 <pre class="literal-block">
 def func():
     print(&quot;Hello World&quot;)
 </pre>
 </div>
+<hr class="docutils" />
+<div class="section" id="sections">
+<h3>Sections</h3>
+<pre class="literal-block">
+Part 1
+######
+
+Chapter 1
+*********
+
+Section 1
+=========
+
+=========
+Section 2
+=========
+
+########
+Clause 1
+########
+
+Part 2
+######
+</pre>
+<p>This will look like this:</p>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="part-1">
 <h2>Part 1</h2>
 <div class="section" id="chapter-1">

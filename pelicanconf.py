@@ -9,9 +9,9 @@ SITEURL = ''
 PATH = 'content'
 
 TIMEZONE = 'Asia/Tokyo'
+DEFAULT_DATE = 'fs'
 
 DEFAULT_LANG = 'ja'
-DEFAULT_DATE = 'fs'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
