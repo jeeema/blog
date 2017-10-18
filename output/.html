@@ -27,7 +27,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2017-10-15T00:43:24.096434+09:00">
+        <abbr class="published" title="2017-10-15T18:05:49.944324+09:00">
                 Published: 日 15 10月 2017
         </abbr>
 
@@ -36,8 +36,8 @@
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info -->      <div class="section" id="about-the-basic-uses-and-several-small-things-of-rest">
-<h2>About the basic uses and several small things of reST</h2>
+</footer><!-- /.post-info -->      <div class="section" id="about-the-basic-use-of-rest">
+<h2>About the basic use of reST</h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -53,8 +53,8 @@
 <div class="section" id="inline-markers">
 <h3>Inline markers</h3>
 <p>The right-hand forms are called &quot;interpreted text roles&quot;.
-The semantics for this is like this; :rolename:<cite>text</cite></p>
-<p>reST:</p>
+The semantics for this is like this; &lt;:rolename:`text`&gt;</p>
+<p>reST code:</p>
 <pre class="literal-block">
 *emphasis* = :emphasis:`emphasis`
 
@@ -64,49 +64,75 @@ The semantics for this is like this; :rolename:<cite>text</cite></p>
 
 :superscript:`superscript` :subscript:`subscript`
 </pre>
-<p>This will look like this:</p>
-<hr class="docutils" />
+<p>This is printed like this:</p>
 <p><em>emphasis</em> = <em>emphasis</em></p>
 <p><strong>strong emphasis</strong>  = <strong>strong emphasis</strong></p>
 <p><tt class="docutils literal">literal</tt>  = <tt class="docutils literal">literal</tt></p>
 <p><sup>superscript</sup> <sub>subscript</sub></p>
 </div>
-<hr class="docutils" />
 <div class="section" id="lists">
 <h3>Lists</h3>
 <div class="section" id="normal-lists-including-the-numbered-and-the-non-numbered">
 <h4>Normal lists(including the numbered and the non-numbered)</h4>
 <p>reST code:</p>
 <pre class="literal-block">
-* ELEMENT1
-* ELEMENT1
+* This is
+* a bulleted list.
 
-#. ELEMENT1
-4. ELEMENT1
+1. AAAAA
 
-     1. element1
-     #. element2
+     #. aaaaa
 
-#. ELEMENT1
-#. ELEMENT1
+         #. xxxxx
+
+
+     #. bbbbb
+
+
+#. BBBBB
+#. CCCCC
+#. DDDDD
+#. EEEEE
 </pre>
-<p>This will look like this:</p>
-<hr class="docutils" />
-<p>#. ELEMENT1
-2. ELEMENT2
-#. ELEMENT3</p>
+<p>This is printed like this:</p>
+<ul class="simple">
+<li>This is</li>
+<li>a bulleted list.</li>
+</ul>
+<ol class="arabic">
+<li><p class="first">AAAAA</p>
+<blockquote>
+<ol class="arabic">
+<li><p class="first">aaaaa</p>
 <blockquote>
 <ol class="arabic simple">
-<li>element1</li>
-<li>element2</li>
+<li>xxxxx</li>
 </ol>
 </blockquote>
-<ol class="arabic simple">
-<li>ELEMENT4</li>
-<li>ELEMENT5</li>
+</li>
+<li><p class="first">bbbbb</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p class="first">BBBBB</p>
+</li>
+<li><p class="first">CCCCC</p>
+</li>
+<li><p class="first">DDDDD</p>
+</li>
+<li><p class="first">EEEEE</p>
+</li>
+</ol>
+<ol class="arabic simple" start="5">
+<li>vvvvv</li>
+<li>wwwww</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li>xxxxx</li>
+<li>yyyyy</li>
 </ol>
 </div>
-<hr class="docutils" />
 <div class="section" id="definition-lists">
 <h4>Definition lists</h4>
 <p>reST code:</p>
@@ -116,98 +142,137 @@ term1
 term2
     description of term2
 
+    This line is still the part of discription of term2.
+
+
+
 term3
     description of term3
 </pre>
-<p>This will look like this:</p>
-<hr class="docutils" />
+<p>This is printed like this:</p>
 <dl class="docutils">
 <dt>term1</dt>
 <dd>description of term1</dd>
 <dt>term2</dt>
-<dd>description of term2</dd>
+<dd><p class="first">description of term2</p>
+<p class="last">This line is still in the discription of term2.</p>
+</dd>
 <dt>term3</dt>
 <dd>description of term3</dd>
 </dl>
-<hr class="docutils" />
-<p>The blank line between term2 and term3 is removed.
-It seems the blank lines between blocks which have the same indents are removed.</p>
+<p>We can see 3 blanks lines between term2 and 3 are removed.
+It seems the blank lines between the entries(?) are removed.</p>
 </div>
+</div>
+<div class="section" id="blocks">
+<h3>Blocks</h3>
+<div class="section" id="quote-blocks">
+<h4>Quote Blocks</h4>
+<blockquote>
+<p>Life's but a walking shadow, a poor player.
+That struts and frets his hour upon the stage,
+And then is heard no more. It is a tale
+Told by an idiot, full of sound and fury,
+Signifying nothing.</p>
+<blockquote>
+&lt;Macbeth - Shakespere&gt;</blockquote>
+</blockquote>
+</div>
+<div class="section" id="line-block">
+<h4>Line block</h4>
+<div class="line-block">
+<div class="line">Life's but a walking shadow, a poor player.</div>
+<div class="line">That struts and frets his hour upon the stage,</div>
+<div class="line">And then is heard no more. It is a tale</div>
+<div class="line">Told by an idiot, full of sound and fury,</div>
+<div class="line">Signifying nothing.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">&lt;Macbeth - Shakespare&gt;</div>
+</div>
+</div>
+<p>You can use line blocks in quote blocks:</p>
+<blockquote>
+<div class="line-block">
+<div class="line">Life's but a walking shadow, a poor player.</div>
+<div class="line">That struts and frets his hour upon the stage,</div>
+<div class="line">And then is heard no more. It is a tale</div>
+<div class="line">Told by an idiot, full of sound and fury,</div>
+<div class="line">Signifying nothing.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">&lt;Macbeth - Shakespere&gt;</div>
+</div>
+</div>
+</blockquote>
 </div>
 <div class="section" id="literal-blocks">
-<h3>Literal blocks</h3>
+<h4>Literal blocks</h4>
 <p>The blocks after literal block markers will be unindented, and the font of each block will be a monospaced font, in all cases.
-There must be more than one line between a line containing the marker between the literal block.</p>
-<p>If the markers occur in a line containing  a non-space character, single colon following that non-space character will be displayed:</p>
+There must be more than one line between a line containing the marker and the literal block.</p>
+<p>If the markers occur following a non-space character, single colon following that non-space character will be printed:</p>
 <pre class="literal-block">
 The next paragraph is a code sample::
 
     def func():
         print(&quot;Hello World&quot;)
 </pre>
-<p>So this will look like this:</p>
-<hr class="docutils" />
+<p>So this is printed like this:</p>
 <p>The next paragraph is a code sample:</p>
 <pre class="literal-block">
 def func():
     print(&quot;Hello World&quot;)
 </pre>
-<hr class="docutils" />
-<p>If the markers occur following a space, the colons are not displayed:</p>
+<p>If the markers occur following a space, the colons are not printed:</p>
 <pre class="literal-block">
-The next paragraph is a code sample.
-::
+The next paragraph is a code sample. ::
 
-     def func():
-         print(&quot;Hello World&quot;)
+    def func():
+        print(&quot;Hello World&quot;)
 </pre>
-<p>So this will look like this:</p>
-<hr class="docutils" />
+<p>So this is printed like this:</p>
 <p>The next paragraph is a code sample.</p>
 <pre class="literal-block">
 def func():
     print(&quot;Hello World&quot;)
 </pre>
 </div>
-<hr class="docutils" />
+</div>
 <div class="section" id="sections">
 <h3>Sections</h3>
+<p>reST code:</p>
 <pre class="literal-block">
 Part 1
 ######
 
-Chapter 1
-*********
+Chapter
+*******
 
-Section 1
-=========
+Section
+=======
 
-=========
-Section 2
-=========
+===========
+Sub section
+===========
 
-########
-Clause 1
-########
+######
+Clause
+######
 
 Part 2
 ######
 </pre>
-<p>This will look like this:</p>
+<p>This is printed like this:</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="part-1">
 <h2>Part 1</h2>
-<div class="section" id="chapter-1">
-<h3>Chapter 1</h3>
-<div class="section" id="section-1">
-<h4>Section 1</h4>
-<div class="section" id="section-2">
-<h5>Section 2</h5>
-<div class="section" id="clause-1">
-<h6>Clause 1</h6>
-</div>
+<div class="section" id="chapter">
+<h3>Chapter</h3>
+<div class="section" id="section">
+<h4>Section</h4>
+<div class="section" id="sub-section">
+<h5>Sub section</h5>
 </div>
 </div>
 </div>
