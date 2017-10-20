@@ -3,24 +3,22 @@ import sys, datetime
 TEMP = """
 
 
-
-:date: {timestamp}
-:modified:
+:modified: {timestamp}
 :tags:
-:category:
-:slug:
+:slug: {filename}
 :summary:
-:status: draft
 
 """
 
-def make_entry(filename):
-	fn = str(filename)
-	template = TEMP.format(timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+def make_entry(fn):
+	fname = fn.split('/')[-1].split('.')[0]
+	template = TEMP.format(timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), filename=fname)
 
 	with open(fn, 'a') as f:
 		f.write(template)
+
 	print("File created -> " + fn)
+
 
 if __name__ == '__main__':
 
