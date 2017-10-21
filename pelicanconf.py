@@ -1,54 +1,67 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+#Ref:docs.getpelican.com/en/latest/settings.html
+
 from __future__ import unicode_literals
 
-# General ---------------------------------------------------------------------------------------------------------------
 AUTHOR = 'jeeema'
-SITENAME = 'MATH, SCIENCE, COMPUTER'
+SITENAME = "jeeema's log"
 SITEURL = ''
 
-#Uncomment this if you want document-relative URLs when developing
-#RELATIVE_URLS = True
-
 DEFAULT_METADATA = {'status': 'draft'}
-
-TIMEZONE = 'Asia/Tokyo'
-DEFAULT_DATE = 'fs'
 
 DEFAULT_LANG = 'ja'
 
 USE_FOLDER_AS_CATEGORY = True
-
 #(This may not be reflected on some templates)
 DISPLAY_CATEGORIES_ON_MENU = True
-
 #Pages in content/pages are displayed in the primary navigation menu.(This may not be reflected on some templates)
 #To exclude any contents in pages directory, add ':status: hidden' as metadata.
 DISPLAY_PAGES_ON = True
 
-DEFAULT_PAGINATION = False
+SUMMARY_MAX_LENGTH = 50
 
-#Set this to False when changed settings are not reflected
-LOAD_CONTENT_CACHE = True
+DEFAULT_PAGINATION = True
+
 
 #Default settings of Pygments automatically applied to reST every code block.
 PYGMENTS_RST_OPTIONS = {'linenos': 'inline'}
 
-# Paths -----------------------------------------------------------------------------------------------------------------
+# Paths & URLs ----------------------------------------------------------------------------------------------------------
 
 PATH = 'content/'
 OUTPUT_PATH  = 'output/'
+
+PAGE_PATHS = ['pages/']
+ARTICLE_PATHS = ['articles/']
 STATIC_PATHS = ['images']
 
+IGNORE_FILES = ['.git', '__pycache__']
 #Files that shouldn't be deleted from the output directory.
 OUTPUT_RETENTION = {'.git'}
 
+CACHE_CONTENT = True
+CACHE_PATH = 'cache'
+#Set this to False when changed settings are not reflected
+LOAD_CONTENT_CACHE = True
+
+SLUGIFY_SOURCE = 'basename'
+
+#Uncomment this if you want document-relative URLs when developing
+#RELATIVE_URLS = True
+
 # Feed generation is usually not desired when developing ----------------------------------------------------------------
+
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+# Time & Date -----------------------------------------------------------------------------------------------------------
+
+TIMEZONE = 'Asia/Tokyo'
+DEFAULT_DATE = 'fs'
 
 # Blogroll --------------------------------------------------------------------------------------------------------------
 LINKS = (('Pelican', 'http://getpelican.com/'),
