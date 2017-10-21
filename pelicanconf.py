@@ -10,9 +10,6 @@ SITEURL = ''
 #Uncomment this if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-PATH = 'content'
-STATIC_PATHS = ['images']
-
 DEFAULT_METADATA = {'status': 'draft'}
 
 TIMEZONE = 'Asia/Tokyo'
@@ -34,11 +31,17 @@ DEFAULT_PAGINATION = False
 #Set this to False when changed settings are not reflected
 LOAD_CONTENT_CACHE = True
 
-# Pygments configuration ------------------------------------------------------------------------------------------------
-
-#Default settings of Pygments automatically applied to every code block
+#Default settings of Pygments automatically applied to reST every code block.
 PYGMENTS_RST_OPTIONS = {'linenos': 'inline'}
 
+# Paths -----------------------------------------------------------------------------------------------------------------
+
+PATH = 'content/'
+OUTPUT_PATH  = 'output/'
+STATIC_PATHS = ['images']
+
+#Files that shouldn't be deleted from the output directory.
+OUTPUT_RETENTION = {'.git'}
 
 # Feed generation is usually not desired when developing ----------------------------------------------------------------
 FEED_ALL_ATOM = None

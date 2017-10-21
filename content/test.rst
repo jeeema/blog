@@ -1,7 +1,9 @@
-reST
+test
 ####
 
-:date: 2017-10-15 18:28
-:category: test
+:modified: 2017-10-20 23:40
+:tags:
+:slug: test
+:summary:
 
-Hello World from Pelican
+Hello World.
