@@ -12,5 +12,7 @@ TEST
 
 .. code-block:: python3
 
-    def hello():
-      print("hello world")
+     def hello():
+         print("hello world")
+
+Pelican is so good!
