@@ -1,18 +1,16 @@
 import sys, datetime
 
-TEMP = """
+TEMPLATE = """
 
 
 :modified: {timestamp}
 :tags:
-:slug: {filename}
 :summary:
 
 """
 
 def make_entry(fn):
-	fname = fn.split('/')[-1].split('.')[0]
-	template = TEMP.format(timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), filename=fname)
+	template = TEMPLATE.format(timestamp=datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
 
 	with open(fn, 'a') as f:
 		f.write(template)
