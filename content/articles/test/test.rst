@@ -1,7 +1,6 @@
 TEST
 ####
 
-:modified: 2017-10-23 18:46
 :tags:
 :summary:
 :status: published
