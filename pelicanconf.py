@@ -53,7 +53,7 @@ PYGMENTS_RST_OPTIONS = {'linenos': 'inline'}
 
 SITEURL = 'https://jeeema.netlify.com'
 #Set this to true if you want document-relative URLs when developing.
-RELATIVE_URLS = False
+RELATIVE_URLS = True
 #Uses articles' file names to create their slugs without prepending their paths.
 SLUGIFY_SOURCE = 'basename'
 PATH = 'content'

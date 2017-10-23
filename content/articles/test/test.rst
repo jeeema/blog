@@ -15,4 +15,4 @@ TEST
     def hello():
         print("hello world")
 
-Pelican is very good!
+Pelican is good!
