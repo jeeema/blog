@@ -53,7 +53,7 @@ PYGMENTS_RST_OPTIONS = {'linenos': 'inline'}
 
 SITEURL = 'https://jeeema.netlify.com'
 #Set this to true if you want document-relative URLs when developing.
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 #Uses articles' file names to create their slugs without prepending their paths.
 SLUGIFY_SOURCE = 'basename'
 PATH = 'content'
@@ -61,6 +61,7 @@ OUTPUT_PATH  = 'output/'
 #If set to True, copies the content sources to OUTPUT_PATH.
 OUTPUT_SOURCES = False
 IGNORE_FILES = ['.git', '__pycache__', '.#*']
+DELETE_OUTPUT_DIRECTORY = True
 #Files that shouldn't be deleted from OUTPUT_PATH
 OUTPUT_RETENTION = ['.git']
 
