@@ -1,7 +1,7 @@
 TEST
 ####
 
-:modified: 2017-10-21 22:12
+:modified: 2017-10-23 18:46
 :tags:
 :summary:
 :status: published
@@ -16,4 +16,4 @@ TEST
     def hello():
         print("hello world")
 
-Pelican is so good!
+Pelican is very good!
