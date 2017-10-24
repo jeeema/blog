@@ -21,7 +21,7 @@ DEFAULT_CATEGORY = 'misc'
 MENUITEMS = []
 SITESUBTITLE = ''
 #(This may not be reflected on some templates)
-DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = True
 #Pages in content/pages are displayed in the primary navigation menu.(This may not be reflected on some templates)
 #To exclude any contents in pages directory, add ':status: hidden' as metadata.
 DISPLAY_PAGES_ON = True
@@ -41,7 +41,7 @@ ARTICLE_ORDER_BY = 'reversed-date'
 PAGES_ORDER_BY = 'basename'
 
 # Theme
-THEME = 'pelican-themes/gum/'
+THEME = 'pelican-themes/bootstrap2/'
 #Destination directory in OUTPUT_PATH where Pelican will place the files collected from THEME_STATIC_PATHS.
 THEME_STATIC_DIR ='theme'
 #A list of static theme paths to be copied
