@@ -7,11 +7,11 @@ from __future__ import unicode_literals
 # METADATA ==============================================================================================================
 
 AUTHOR = 'jeeema'
-SITENAME = "jeeema's log"
+SITENAME = "jeeema's blog"
 
 DEFAULT_METADATA = {'status': 'draft'}
 
-DEFAULT_LANG = 'ja'
+DEFAULT_LANG = 'en'
 
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'misc'
@@ -160,3 +160,5 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('Twitter', 'https://twitter.com/jeeema'),)
 
 SOCIAL_WIDGET_NAME = 'Social'
+
+TWITTER_USERNAME = 'jeeema'
