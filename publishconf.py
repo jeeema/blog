@@ -20,4 +20,4 @@ DELETE_OUTPUT_DIRECTORY = True
 # Following items are often useful when publishing
 
 #GOOGLE_ANALYTICS = ""
-DISQUS_SITENAME = 'jeeema-netlify-blog'
+DISQUS_SITENAME = 'jeeema-blog'
