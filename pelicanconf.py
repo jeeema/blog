@@ -160,5 +160,3 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('Twitter', 'https://twitter.com/jeeema'),)
 
 SOCIAL_WIDGET_NAME = 'Social'
-
-TWITTER_USERNAME = 'jeeema'
