@@ -18,16 +18,17 @@ DEFAULT_CATEGORY = 'misc'
 
 # APPEARANCE ============================================================================================================
 
+MENUITEMS = []
+SITESUBTITLE = ''
 #(This may not be reflected on some templates)
-DISPLAY_CATEGORIES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 #Pages in content/pages are displayed in the primary navigation menu.(This may not be reflected on some templates)
 #To exclude any contents in pages directory, add ':status: hidden' as metadata.
 DISPLAY_PAGES_ON = True
-
 SUMMARY_MAX_LENGTH = 64
 
 # Pagination
-DEFAULT_PAGINATION = True
+DEFAULT_PAGINATION = 10
 DEFAULT_ORPHANS = 0
 
 # Order of content
@@ -40,7 +41,7 @@ ARTICLE_ORDER_BY = 'reversed-date'
 PAGES_ORDER_BY = 'basename'
 
 # Theme
-THEME = 'pelican-themes/nice-blog'
+THEME = 'pelican-themes/bootstrap2/'
 #Destination directory in OUTPUT_PATH where Pelican will place the files collected from THEME_STATIC_PATHS.
 THEME_STATIC_DIR ='theme'
 #A list of static theme paths to be copied
@@ -57,11 +58,11 @@ RELATIVE_URLS = True
 #Uses articles' file names to create their slugs without prepending their paths.
 SLUGIFY_SOURCE = 'basename'
 PATH = 'content'
-OUTPUT_PATH  = 'output/'
+OUTPUT_PATH  = 'public/'
 #If set to True, copies the content sources to OUTPUT_PATH.
 OUTPUT_SOURCES = False
 IGNORE_FILES = ['.git', '__pycache__', '.#*']
-DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = False
 #Files that shouldn't be deleted from OUTPUT_PATH
 OUTPUT_RETENTION = ['.git']
 
@@ -86,25 +87,45 @@ CONTENT_CACHING_LAYER = 'reader'
 #Another way to check for mods is to use the hashlib module, which is more reliable than mtime.
 #Note that even when the cache is used, all the output is always written, so the mtime of each generated HTML file will always change.
 CHECK_MODIFIED_METHOD = 'mtime'
-#If this list if not empty, only output files with their paths in this are written. The paths can be specified using '--write-selected' option, which acceptsa comma-seperated list of multiple output paths.
+#If this list if not empty, only output files with their paths in this list are written. The paths can be specified using '--write-selected' option, which acceptsa comma-seperated list of multiple output paths.
 WRITE_SELECTED = []
 
 ARTICLE_PATHS = ['articles']
-ARTICLE_SAVE_AS = 'articles/{category}/{slug}.html'
+ARTICLE_SAVE_AS = '{category}/{slug}.html'
 ARTICLE_URL = '{category}/{slug}.html'
-ARTICLE_LANG_SAVE_AS = 'articles/{category}/{slug}.html'
+ARTICLE_LANG_SAVE_AS = '{category}/{slug}.html'
 ARTICLE_LANG_URL = '{lang}/{category}/{slug}.html'
 
-DRAFT_SAVE_AS = 'drafts/{category}/{slug}.html'
+DRAFT_SAVE_AS = '{category}/{slug}.html'
 DRAFT_URL = 'drafts/{category}/{slug}.html'
-DRAFT_LANG_SAVE_AS = 'drafts/{category}/{slug}.html'
+DRAFT_LANG_SAVE_AS = '{category}/{slug}.html'
 DRAFT_LANG_URL = '{lang}/drafts/{category}/{slug}.html'
 
 PAGE_PATHS = ['pages']
-PAGE_SAVE_AS = 'pages/{slug}.html'
+PAGE_SAVE_AS = '{slug}.html'
 PAGE_URL = '{slug}.html'
-PAGE_LANG_SAVE_AS = 'pages/{slug}.html'
+PAGE_LANG_SAVE_AS = '{slug}.html'
 PAGE_LANG_URL = '{lang}/{slug}.html'
+
+CATEGORY_SAVE_AS = '{slug}/index.html'
+CATEGORY_URL = '{slug}'
+CATEOGRIES_SAVE_AS = 'categories.html'
+CATEGORY_SUBSTITUTIONS = ()
+
+TAG_SAVE_AS = '{slug}/index.html'
+TAG_URL = '{slug}'
+TAGS_SAVE_AS = 'tags.html'
+TAG_SUBSTITUTIONS = ()
+
+AUTHOR_SAVE_AS = ''
+AUTHOR_URL = ''
+AUTHORS_SAVE_AS = ''
+AUTHOR_SUBSTITUTIONS = ()
+
+ARCHIVES_SAVE_AS = 'archives.html'
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+DAY_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/index.html'
 
 # TIME & DATE ===========================================================================================================
 
@@ -113,6 +134,10 @@ DEFAULT_DATE = 'fs'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d %H:%M'
 #If set to False, content with dates in the future will get a default status of `draft`.
 WITH_FUTURE_DATES = False
+
+# TEMPLATE PAGES ========================================================================================================
+
+DIRECT_TEMPLATES = ['index', 'archives', 'categories', 'tags']
 
 # FEED ==================================================================================================================
 
@@ -126,10 +151,14 @@ AUTHOR_FEED_RSS = None
 
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('Jinja2', 'http://jinja.pocoo.org/'))
+
+#LINKS_WIDGET_NAME = 'Links'
 
 # SOCIAL WIDGET =========================================================================================================
 
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Twitter', 'https://twitter.com/jeeema'),)
+
+SOCIAL_WIDGET_NAME = 'Social'
+
+TWITTER_USERNAME = 'jeeema'
