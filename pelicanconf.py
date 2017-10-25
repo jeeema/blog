@@ -79,7 +79,8 @@ CACHE_PATH = 'cache'
 #To ignore and regenrate the whole cache so that the modifications to the settings will be reflected without fail, disable this or pass the '--ignore-cache' option to Pelican.
 LOAD_CONTENT_CACHE = True
 #If there are any mods to the settings file, ignores the cache automatically when Pelican is running in autoreload mode.
-AUTORELOAD_IGNORE_CACHE = True
+#This setting is now deprecated.
+#AUTORELOAD_IGNORE_CACHE = True
 #'reader': caches the raw content and metadata returned by a reader
 #'generator': caches the processed content (faster than reader). But this may conflict with some plugins and WITH_FUTURE_DATES.
 CONTENT_CACHING_LAYER = 'reader'
