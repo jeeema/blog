@@ -41,7 +41,7 @@ ARTICLE_ORDER_BY = 'reversed-date'
 PAGES_ORDER_BY = 'basename'
 
 # Theme
-THEME = 'pelican-themes/tuxlite_tbs/'
+THEME = 'pelican-themes/tuxlite_zf/'
 #Destination directory in OUTPUT_PATH where Pelican will place the files collected from THEME_STATIC_PATHS.
 THEME_STATIC_DIR ='theme'
 #A list of static theme paths to be copied
