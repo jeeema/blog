@@ -21,7 +21,7 @@ DEFAULT_CATEGORY = 'misc'
 MENUITEMS = []
 SITESUBTITLE = ''
 #(This may not be reflected on some templates)
-DISPLAY_CATEGORIES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 #Pages in content/pages are displayed in the primary navigation menu.(This may not be reflected on some templates)
 #To exclude any contents in pages directory, add ':status: hidden' as metadata.
 DISPLAY_PAGES_ON = True
