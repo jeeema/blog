@@ -123,7 +123,7 @@ CACHE_CONTENT = True
 CACHE_PATH = 'cache'
 #To ignore and regenrate the whole cache so that the modifications to the settings will be reflected without fail, disable this or pass the '--ignore-cache' option to Pelican.
 LOAD_CONTENT_CACHE = True
-#If there are any mods to the settings file, ignores the cache automatically when Pelican is running in autoreload mode.
+#When Pelican is running in autoreload mode, ignores the cache automatically if there are any mods to the settings file.
 #This setting is now deprecated.
 AUTORELOAD_IGNORE_CACHE = True
 #'reader': caches the raw content and metadata returned by a reader
@@ -131,7 +131,7 @@ AUTORELOAD_IGNORE_CACHE = True
 CONTENT_CACHING_LAYER = 'reader'
 #Controls how files are checked for mods.
 #Another way to check for mods is to use the hashlib module, which is more reliable than mtime.
-#Note that even when the cache is used, all the output is always written, so the mtime of each generated HTML file will always change.
+#Note that all the output is always generated and the mtime of each generated HTML file will always change, even when the cache is used.
 CHECK_MODIFIED_METHOD = 'mtime'
 #If this list is not empty, only output paths in this list are written. The paths can be specified using '--write-selected' option, which accepts a comma-seperated sequence of multiple output paths.
 WRITE_SELECTED = []
