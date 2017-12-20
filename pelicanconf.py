@@ -41,16 +41,61 @@ ARTICLE_ORDER_BY = 'reversed-date'
 PAGES_ORDER_BY = 'basename'
 
 # Theme
-THEME = 'pelican-themes/bootstrap2/'
+THEME = 'themes/pelican-bootstrap3/'
 #Destination directory in OUTPUT_PATH where Pelican will place the files collected from THEME_STATIC_PATHS.
 THEME_STATIC_DIR ='theme'
 #A list of static theme paths to be copied
 THEME_STATIC_PATHS = ['static']
 
+# Bootstrap3 -----------------------------------------------------------------------------------------------------------
+BOOTSTRAP_THEME = 'cosmo'
+SHOW_ARTICLE_AUTHOR = False
+SHOW_ARTICLE_CATEGORY = True
+SHOW_DATE_MODIFIED = True
+DISPLAY_ARTICLE_INFO_ON_INDEX = True
+BOOTSTRAP_FLUID = True
+DISPLAY_BREADCRUMBS = True
+DISPLAY_CATEGORY_IN_BREADCRUMBS = True
+BOOTSTRAP_NAVBAR_INVERSE = True
+DOCUTIL_CSS = True
+
+DISPLAY_TAGS_ON_SIDEAR = True
+DISPLAY_TAGS_INLINE = True
+#TAG_CLOUD_MAX_ITEMS =
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+RECENT_POST_COUNT = 4
+DISPLAY_ARCHIVE_ON_SIDEBAR = True
+DISABLE_SIDEBAR_TITLE_ICONS = False
+
+ADDTHIS_PROFILE = 'ra-59fd6b9ee91b7670'
+#addthis_data_track_addressbaris forcefully disabled regardless of this setting.
+#The settings can be found in 'pelican-bootstrap3/templates/includes/addthis.html'.
+ADDTHIS_DATA_TRACK_ADDRESSBAR = False
+ADDTHIS_FACEBOOK_LIKE = False
+ADDTHIS_TWEET = True
+ADDTHIS_GOOGLE_PLUSONE = False
+
+DISQUS_DISPLAY_COUNTS = False
+
+SERIES_TEXT = 'Part {index} of the {name} series'
+DISPLAY_SERIES_ON_SIDEBAR = False
+SHOW_SERIES = True
+
+SHARIFF = False
+SHARIFF_LANG = 'en'
+SHARIFF_ORIENTATION = 'vertical'
+SHARIFF_SERVICES = []
+SHARIFF_THEME = 'gray'
+SHARIFF_TWITTER_VIA = True
+
+PYGMENTS_STYLE = 'fruity'
+
+#-----------------------------------------------------------------------------------------------------------------------
+
 #Default settings of Pygments automatically applied to every reST code block
 PYGMENTS_RST_OPTIONS = {'linenos': 'inline'}
-
-# PATHS & URLs ==========================================================================================================
+# PATHS & URLs =========================================================================================================
 
 SITEURL = 'https://jeeema.netlify.com'
 #Set this to true if you want document-relative URLs when developing.
@@ -62,7 +107,7 @@ OUTPUT_PATH  = 'public/'
 #If set to True, copies the content sources to OUTPUT_PATH.
 OUTPUT_SOURCES = False
 IGNORE_FILES = ['.git', '__pycache__', '.#*']
-DELETE_OUTPUT_DIRECTORY = False
+DELETE_OUTPUT_DIRECTORY = True
 #Files that shouldn't be deleted from OUTPUT_PATH
 OUTPUT_RETENTION = ['.git']
 
@@ -80,7 +125,7 @@ CACHE_PATH = 'cache'
 LOAD_CONTENT_CACHE = True
 #If there are any mods to the settings file, ignores the cache automatically when Pelican is running in autoreload mode.
 #This setting is now deprecated.
-#AUTORELOAD_IGNORE_CACHE = True
+AUTORELOAD_IGNORE_CACHE = True
 #'reader': caches the raw content and metadata returned by a reader
 #'generator': caches the processed content (faster than reader). But this may conflict with some plugins and WITH_FUTURE_DATES.
 CONTENT_CACHING_LAYER = 'reader'
@@ -88,34 +133,34 @@ CONTENT_CACHING_LAYER = 'reader'
 #Another way to check for mods is to use the hashlib module, which is more reliable than mtime.
 #Note that even when the cache is used, all the output is always written, so the mtime of each generated HTML file will always change.
 CHECK_MODIFIED_METHOD = 'mtime'
-#If this list if not empty, only output files with their paths in this list are written. The paths can be specified using '--write-selected' option, which acceptsa comma-seperated list of multiple output paths.
+#If this list is not empty, only output paths in this list are written. The paths can be specified using '--write-selected' option, which accepts a comma-seperated sequence of multiple output paths.
 WRITE_SELECTED = []
 
-ARTICLE_PATHS = ['articles']
+ARTCLE_PATHS = ['']
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
 ARTICLE_URL = '{category}/{slug}.html'
-ARTICLE_LANG_SAVE_AS = '{category}/{slug}.html'
+ARTICLE_LANG_SAVE_AS = '{lang}/{category}/{slug}.html'
 ARTICLE_LANG_URL = '{lang}/{category}/{slug}.html'
 
-DRAFT_SAVE_AS = '{category}/{slug}.html'
+DRAFT_SAVE_AS = 'drafts/{category}/{slug}.html'
 DRAFT_URL = 'drafts/{category}/{slug}.html'
-DRAFT_LANG_SAVE_AS = '{category}/{slug}.html'
+DRAFT_LANG_SAVE_AS = '{lang}/drafts/{category}/{slug}.html'
 DRAFT_LANG_URL = '{lang}/drafts/{category}/{slug}.html'
 
-PAGE_PATHS = ['pages']
+PAGE_PATHS = ['pages', 'ja/pages']
 PAGE_SAVE_AS = '{slug}.html'
 PAGE_URL = '{slug}.html'
-PAGE_LANG_SAVE_AS = '{slug}.html'
-PAGE_LANG_URL = '{lang}/{slug}.html'
 
 CATEGORY_SAVE_AS = '{slug}/index.html'
 CATEGORY_URL = '{slug}'
-CATEOGRIES_SAVE_AS = 'categories.html'
+CATEOGRIES_SAVE_AS = 'categories/index.html'
+CATEGORIES_URL = 'categories'
 CATEGORY_SUBSTITUTIONS = ()
 
 TAG_SAVE_AS = '{slug}/index.html'
 TAG_URL = '{slug}'
-TAGS_SAVE_AS = 'tags.html'
+TAGS_SAVE_AS = 'tags/index.html'
+TAGS_URL = 'tags'
 TAG_SUBSTITUTIONS = ()
 
 AUTHOR_SAVE_AS = ''
@@ -123,7 +168,8 @@ AUTHOR_URL = ''
 AUTHORS_SAVE_AS = ''
 AUTHOR_SUBSTITUTIONS = ()
 
-ARCHIVES_SAVE_AS = 'archives.html'
+ARCHIVES_SAVE_AS = 'archives/index.html'
+ARCHIVES_URL = 'archives'
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 DAY_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/index.html'
@@ -133,12 +179,25 @@ DAY_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/index.html'
 TIMEZONE = 'Asia/Tokyo'
 DEFAULT_DATE = 'fs'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d %H:%M'
+LOCALE = 'en_US.utf8'
+OG_LOCALE = 'en_US.utf8'
 #If set to False, content with dates in the future will get a default status of `draft`.
 WITH_FUTURE_DATES = False
 
 # TEMPLATE PAGES ========================================================================================================
 
-DIRECT_TEMPLATES = ['index', 'archives', 'categories', 'tags']
+#'search' is for 'tipue_search' plugin
+DIRECT_TEMPLATES = ['index', 'archives', 'categories', 'tags', 'search']
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n'],}
+#For the language button(ref:smartass101.github.io/pelican-plugins/implementing-lang-buttons.html)
+langs_lookup = {'en': 'English', 'ja':'日本語',}
+
+def lookup_lang_name(lang_code):
+	return langs_lookup[lang_code]
+
+JINJA_FILTERS = {
+    'lookup_lang_name': lookup_lang_name,
+}
 
 # FEED ==================================================================================================================
 
@@ -150,16 +209,30 @@ AUTHOR_FEED_RSS = None
 
 # BLOGROLL ==============================================================================================================
 
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'))
+LINKS = ()
 
-#LINKS_WIDGET_NAME = 'Links'
+LINKS_WIDGET_NAME = 'Links'
 
 # SOCIAL WIDGET =========================================================================================================
 
-SOCIAL = (('Twitter', 'https://twitter.com/jeeema'),)
+SOCIAL = (('twitter', 'https://twitter.com/jeeema'),)
 
 SOCIAL_WIDGET_NAME = 'Social'
 
 TWITTER_USERNAME = 'jeeema'
+
+# Plugins ===============================================================================================================
+
+PLUGINS = ['i18n_subsites', 'series', 'tipue_search']
+PLUGIN_PATHS = ['plugins']
+
+# i18n
+I18N_TEMPLATES_LANG = 'en'
+I18N_UNTRANSLATED_ARTICLES = 'hide'
+I18N_UNTRANSLATED_PAGES = 'hide'
+I18N_SUBSITES = {
+    'ja':{
+		'SITENAME': 'jeeemaの日記じみたもの',
+		'SITEURL': 'https://jeeema.netlify.com/ja',
+	}
+}

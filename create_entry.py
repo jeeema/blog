@@ -3,6 +3,7 @@ import sys, datetime
 TEMPLATE = """
 
 
+:lang:
 :modified: {timestamp}
 :tags:
 :summary:
