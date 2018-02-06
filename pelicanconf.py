@@ -11,6 +11,8 @@ SITENAME = "jeeema's blog"
 
 DEFAULT_METADATA = {'status': 'draft',}
 
+DEFAULT_LANG  = 'en'
+
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'misc'
 
@@ -228,8 +230,8 @@ PLUGIN_PATHS = ['plugins']
 
 # i18n
 I18N_TEMPLATES_LANG = 'en'
-I18N_UNTRANSLATED_ARTICLES = 'keep'
-I18N_UNTRANSLATED_PAGES = 'keep'
+I18N_UNTRANSLATED_ARTICLES = 'remove'
+I18N_UNTRANSLATED_PAGES = 'remove'
 I18N_SUBSITES = {
     'ja':{
 		'SITENAME': 'jeeemaの日記じみたもの',
