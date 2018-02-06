@@ -2,6 +2,7 @@ About
 #####
 
 :lang: en
+:name: about
 :status: published
 
 This blog is mainly on programming, math, and science.
@@ -12,22 +13,20 @@ When reading the archives, you can narrow them down by appending following direc
 
 * ``/year`` (e.g. https://jeeema.netlify.com/2017 )
 * ``/year/month`` (e.g. https://jeeema.netlify.com/2017/10 )
-* ``/year/month/day`` (e.g. https:/jeeema.netlify.com/2017/10/29 )
+* ``/year/month/day`` (e.g. https://jeeema.netlify.com/2017/10/29 )
 * ``/category`` (e.g. https://jeeema.netlify.com/Git )
 * ``/tag`` (e.g. https://jeeema.netlify.com/notes )
 
-You can see categories and tags available on the sidemenu on the homepage.
+**Note**\ : These directory names can't be combined. In other words, you can't use both ``/category`` and ``/year/`` at once.
 
-**Note**\ : These directory names can't be combined.
-
-**Note**\ : "Lang" metadata means the article with it has its Japanese translation on https://jeeema.netlify.com/ja .
+**Note**\ : Articles appended "Lang" metadata to have its Japanese translation on https://jeeema.netlify.com/ja .
 
 ----
 
-このサイトのサブサイト(厳密には違いますが) として、 https:/jeeema.netlify.com/ja があります。
-このサイトの翻訳というわけではなく、メインサイトには含めないような、日記のようなダラダラとした文章や、アニメ・映画などの感想などを日本語で書いていきます。
+このサイトのサブサイトとして、 https:/jeeema.netlify.com/ja があります。
+このサイトの翻訳というわけではなく、メインサイトには含めないような、英語で書いても仕方が無いような記事(日記のようなダラダラとした文章・アニメ・映画などの感想など)、そして何より、僕に英語を書く気力が無い時に書かれたものが置かれています。(予定)
 
 ----
 
 | Check out my `twitter <https://twitter.com/jeeema>`_\ !
-| **WARNING**\ : NSFW picture(s) might be displayed.
+| **WARNING**\ :\ *NSFW*\ picture(s) might be displayed.

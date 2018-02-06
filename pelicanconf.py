@@ -9,9 +9,7 @@ from __future__ import unicode_literals
 AUTHOR = 'jeeema'
 SITENAME = "jeeema's blog"
 
-DEFAULT_METADATA = {'status': 'draft'}
-
-DEFAULT_LANG = 'en'
+DEFAULT_METADATA = {'status': 'draft',}
 
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'misc'
@@ -136,7 +134,9 @@ CHECK_MODIFIED_METHOD = 'mtime'
 #If this list is not empty, only output paths in this list are written. The paths can be specified using '--write-selected' option, which accepts a comma-seperated sequence of multiple output paths.
 WRITE_SELECTED = []
 
-ARTCLE_PATHS = ['']
+INDEX_SAVE_AS = 'index.html'
+
+ARTICLE_PATHS = ['']
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_LANG_SAVE_AS = '{lang}/{category}/{slug}.html'
@@ -148,8 +148,8 @@ DRAFT_LANG_SAVE_AS = '{lang}/drafts/{category}/{slug}.html'
 DRAFT_LANG_URL = '{lang}/drafts/{category}/{slug}.html'
 
 PAGE_PATHS = ['pages', 'ja/pages']
-PAGE_SAVE_AS = '{slug}.html'
-PAGE_URL = '{slug}.html'
+PAGE_SAVE_AS = '{name}.html'
+PAGE_URL = '{name}.html'
 
 CATEGORY_SAVE_AS = '{slug}/index.html'
 CATEGORY_URL = '{slug}'
@@ -228,8 +228,8 @@ PLUGIN_PATHS = ['plugins']
 
 # i18n
 I18N_TEMPLATES_LANG = 'en'
-I18N_UNTRANSLATED_ARTICLES = 'hide'
-I18N_UNTRANSLATED_PAGES = 'hide'
+I18N_UNTRANSLATED_ARTICLES = 'keep'
+I18N_UNTRANSLATED_PAGES = 'keep'
 I18N_SUBSITES = {
     'ja':{
 		'SITENAME': 'jeeemaの日記じみたもの',
